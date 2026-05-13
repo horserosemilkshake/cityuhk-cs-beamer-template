@@ -1,0 +1,230 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\definecolor{CityURed}{HTML}{A40000}
+\definecolor{CityUDarkRed}{HTML}{9F0D43}
+\setbeamercolor{structure}{fg=CityURed}
+\setbeamercolor{palette primary}{bg=CityURed, fg=white}
+\setbeamercolor{palette secondary}{bg=CityUDarkRed, fg=white}
+\setbeamercolor{palette tertiary}{bg=CityURed!85!black, fg=white}
+\setbeamercolor{palette quaternary}{bg=black!70, fg=white}
+\setbeamercolor{title}{fg=white, bg=CityURed}
+\setbeamercolor{subtitle}{fg=white, bg=CityUDarkRed}
+\setbeamercolor{frametitle}{fg=white, bg=CityURed}
+\setbeamercolor{itemize item}{fg=CityURed}
+\setbeamercolor{enumerate item}{fg=CityURed}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+\providecommand{\languagename}{english}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\addbibresource{references.bib}
+
+\title[Presentation Title]{Presentation Title}
+\subtitle{Subtitle or Course Name}
+\author[Your name]{Your name}
+\institute[]{City University of Hong Kong}
+\date{\today}
+\titlegraphic{\includegraphics[height=1.6cm]{figures/CityU_logo.svg.png}}
+
+\begin{document}
+
+% \nocite{*}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Background}
+\textbf{Context}
+\begin{itemize}
+  \item Briefly describe the topic area.
+  \item Explain why this problem matters.
+  \item Provide key terms or definitions.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Problem statement:} summarize the core question in one sentence.
+\end{frame}
+
+\begin{frame}{Motivation and Objectives}
+\textbf{Motivation}
+\begin{itemize}
+  \item Why now?
+  \item Who benefits?
+  \item What gap does this work address?
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Objectives}
+\begin{itemize}
+  \item Objective 1
+  \item Objective 2
+  \item Objective 3
+\end{itemize}
+\end{frame}
+
+\section{Methodology}
+
+\begin{frame}{Approach Overview}
+\textbf{High-level pipeline}
+\begin{itemize}
+  \item Step 1
+  \item Step 2
+  \item Step 3
+\end{itemize}
+
+\textbf{Key components}
+\begin{itemize}
+  \item Component A
+  \item Component B
+  \item Component C
+\end{itemize}
+\end{frame}
+
+\begin{frame}{System Design}
+\textbf{Architecture summary}
+\begin{enumerate}
+  \item Input / data source
+  \item Processing / method
+  \item Output / evaluation
+  \item Deployment / usage
+\end{enumerate}
+\end{frame}
+
+\section{Experiments}
+
+\begin{frame}{Experimental Setup}
+\begin{itemize}
+  \item Dataset description
+  \item Hardware / software environment
+  \item Metrics and baselines
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Protocol}
+\begin{itemize}
+  \item Explain how experiments are run.
+  \item Explain how results are compared.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+\textbf{Main quantitative findings}
+\begin{itemize}
+  \item Result 1
+  \item Result 2
+  \item Result 3
+\end{itemize}
+
+\textbf{Interpretation}
+\begin{itemize}
+  \item What worked well?
+  \item What did not work as expected?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Performance Summary Table}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & Accuracy (\%) & Latency (ms) & F1-score \\
+\midrule
+Baseline & 84.2 & 72 & 0.83 \\
+Method A & 88.7 & 65 & 0.88 \\
+Method B & 90.1 & 61 & 0.90 \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Feedback Form}
+\textbf{Participant details}
+
+\vspace{0.3em}
+Name:\ \hrulefill
+
+\vspace{0.5em}
+Email:\ \hrulefill
+
+\vspace{0.8em}
+\textbf{Evaluation}
+\begin{itemize}
+  \item Overall clarity: \hspace{0.5em} $\square$ Excellent \hspace{1em} $\square$ Good \hspace{1em} $\square$ Fair
+  \item Relevance of content: \hspace{0.5em} $\square$ High \hspace{1em} $\square$ Medium \hspace{1em} $\square$ Low
+  \item Suggestions:\ \hrulefill
+\end{itemize}
+\end{frame}
+
+\section{Discussion}
+
+\begin{frame}{Discussion}
+\textbf{Takeaways}
+\begin{itemize}
+  \item Core insight 1
+  \item Core insight 2
+  \item Core insight 3
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Limitations}
+\begin{itemize}
+  \item Limitation 1
+  \item Limitation 2
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion and Future Work}
+\textbf{Conclusion}
+\begin{itemize}
+  \item One-sentence conclusion.
+  \item Practical implication.
+\end{itemize}
+
+\vspace{0.4em}
+\textbf{Future work}
+\begin{itemize}
+  \item Next step 1
+  \item Next step 2
+\end{itemize}
+\end{frame}
+
+% \begin{frame}[plain]
+% \centering
+% \vfill
+% {\usebeamerfont{title}\usebeamercolor[fg]{title}Thank You}
+
+% \vspace{0.8em}
+% {\large Questions?}
+% \vfill
+% \end{frame}
+
+\section*{Appendix}
+
+\begin{frame}{Appendix / Backup Slide}
+\textbf{Optional extra material}
+\begin{itemize}
+  \item Additional charts
+  \item Extra derivations
+  \item Q\&A notes
+\end{itemize}
+\end{frame}
+
+\section*{References}
+
+\begin{frame}[allowframebreaks]{References}
+\printbibliography[heading=none]
+\end{frame}
+
+\end{document}
