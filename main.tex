@@ -18,6 +18,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
@@ -132,6 +133,64 @@ h_t &= \phi\left(W_h h_{t-1} + W_x x_t + b\right), \\
   \item Replace functions $\phi, g$ with your method-specific operators.
   \item Keep notation consistent with your earlier problem definition.
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Multiline Equation Example: MLE Derivation}
+\textbf{Assume i.i.d. Gaussian samples:} $x_i \sim \mathcal{N}(\mu,\sigma^2)$
+\begin{align}
+L(\mu) &= \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma^2}}\exp\!\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right), \\
+\ell(\mu) &= \log L(\mu)
+= -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_i-\mu)^2, \\
+\frac{\partial \ell}{\partial \mu}
+&= \frac{1}{\sigma^2}\sum_{i=1}^{n}(x_i-\mu)=0
+\Rightarrow \hat{\mu}_{\text{MLE}} = \frac{1}{n}\sum_{i=1}^{n}x_i.
+\end{align}
+\end{frame}
+
+\begin{frame}{Commutative Graph in Commute Algebra}
+\textbf{Commutative square of maps}
+\begin{center}
+\begin{tikzpicture}[>=latex, node distance=3.2cm]
+  \node (A) {$V$};
+  \node[right of=A] (B) {$W$};
+  \node[below of=A] (C) {$X$};
+  \node[below of=B] (D) {$Y$};
+
+  \draw[->,thick] (A) -- node[above] {$f$} (B);
+  \draw[->,thick] (A) -- node[left] {$g$} (C);
+  \draw[->,thick] (B) -- node[right] {$h$} (D);
+  \draw[->,thick] (C) -- node[below] {$k$} (D);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5em}
+\textbf{Commutation condition:} $h \circ f = k \circ g$
+\end{frame}
+
+\begin{frame}{Ring Signature Graph}
+\textbf{Signer anonymity within a public ring}
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.9, transform shape, every node/.style={font=\small}]
+  \node[circle,draw,thick] (S1) at (90:1.9) {$P_1$};
+  \node[circle,draw,thick] (S2) at (18:1.9) {$P_2$};
+  \node[circle,draw,thick,fill=CityURed!15] (S3) at (-54:1.9) {$P_s$};
+  \node[circle,draw,thick] (S4) at (-126:1.9) {$P_4$};
+  \node[circle,draw,thick] (S5) at (162:1.9) {$P_5$};
+
+  \node[draw,rounded corners,thick,align=center,fill=gray!10] (V) at (0,-3.4) {Verifier\\checks $\sigma$};
+
+  \draw[->,thick] (S1) -- (S2);
+  \draw[->,thick] (S2) -- (S3);
+  \draw[->,thick] (S3) -- (S4);
+  \draw[->,thick] (S4) -- (S5);
+  \draw[->,thick] (S5) -- (S1);
+
+  \draw[->,very thick,CityURed] (S3) -- node[right] {$\sigma(m,\mathcal{R})$} (V);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.2em}
+\textbf{Idea:} anyone in ring $\mathcal{R}=\{P_1,\dots,P_5\}$ could have produced signature $\sigma$.
 \end{frame}
 
 \begin{frame}{Figure and Table Overview}
