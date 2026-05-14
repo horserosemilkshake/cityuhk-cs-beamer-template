@@ -23,6 +23,7 @@
 \usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
 \providecommand{\languagename}{english}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{caption}[numbered]
 \addbibresource{references.bib}
 
 \title[Presentation Title]{Presentation Title}
@@ -103,6 +104,62 @@
 \end{enumerate}
 \end{frame}
 
+\begin{frame}{Formula Template: Core Model}
+\textbf{General objective}
+\begin{equation}
+\mathcal{L}(\theta) = \frac{1}{N}\sum_{i=1}^{N} \ell\bigl(f_{\theta}(x_i), y_i\bigr) + \lambda\,\Omega(\theta)
+\end{equation}
+
+\textbf{Symbol definitions}
+\begin{itemize}
+  \item $x_i$: input sample, $y_i$: target label.
+  \item $f_{\theta}(\cdot)$: model with parameters $\theta$.
+  \item $\ell(\cdot)$: task loss, $\Omega(\theta)$: regularization term.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Equation Template: Update Rules}
+\textbf{State transition and parameter update}
+\begin{align}
+h_t &= \phi\left(W_h h_{t-1} + W_x x_t + b\right), \\
+\hat{y}_t &= g\left(W_o h_t\right), \\
+\theta_{t+1} &= \theta_t - \eta\,\nabla_{\theta} \mathcal{L}(\theta_t)
+\end{align}
+
+\textbf{How to reuse this slide}
+\begin{itemize}
+  \item Replace functions $\phi, g$ with your method-specific operators.
+  \item Keep notation consistent with your earlier problem definition.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Figure and Table Overview}
+\begin{columns}[T,onlytextwidth]
+\column{0.49\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth,height=0.45\textheight,keepaspectratio]{figures/Lenna.png}
+\caption{Lenna sample image for visualization template}
+\end{figure}
+
+\column{0.49\textwidth}
+\begin{table}
+\centering
+\scriptsize
+\caption{Performance comparison across methods}
+\begin{tabular}{lccc}
+\toprule
+Method & Acc. (\%) & Lat. (ms) & F1 \\
+\midrule
+Baseline & 84.2 & 72 & 0.83 \\
+Method A & 88.7 & 65 & 0.88 \\
+Method B & 90.1 & 61 & 0.90 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{columns}
+\end{frame}
+
 \section{Experiments}
 
 \begin{frame}{Experimental Setup}
@@ -132,38 +189,6 @@
 \begin{itemize}
   \item What worked well?
   \item What did not work as expected?
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Performance Summary Table}
-\centering
-\small
-\begin{tabular}{lccc}
-\toprule
-Method & Accuracy (\%) & Latency (ms) & F1-score \\
-\midrule
-Baseline & 84.2 & 72 & 0.83 \\
-Method A & 88.7 & 65 & 0.88 \\
-Method B & 90.1 & 61 & 0.90 \\
-\bottomrule
-\end{tabular}
-\end{frame}
-
-\begin{frame}{Feedback Form}
-\textbf{Participant details}
-
-\vspace{0.3em}
-Name:\ \hrulefill
-
-\vspace{0.5em}
-Email:\ \hrulefill
-
-\vspace{0.8em}
-\textbf{Evaluation}
-\begin{itemize}
-  \item Overall clarity: \hspace{0.5em} $\square$ Excellent \hspace{1em} $\square$ Good \hspace{1em} $\square$ Fair
-  \item Relevance of content: \hspace{0.5em} $\square$ High \hspace{1em} $\square$ Medium \hspace{1em} $\square$ Low
-  \item Suggestions:\ \hrulefill
 \end{itemize}
 \end{frame}
 
@@ -199,16 +224,6 @@ Email:\ \hrulefill
   \item Next step 2
 \end{itemize}
 \end{frame}
-
-% \begin{frame}[plain]
-% \centering
-% \vfill
-% {\usebeamerfont{title}\usebeamercolor[fg]{title}Thank You}
-
-% \vspace{0.8em}
-% {\large Questions?}
-% \vfill
-% \end{frame}
 
 \section*{Appendix}
 
