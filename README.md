@@ -14,9 +14,7 @@ An unofficial Beamer presentation template using the Madrid theme with CityU col
 Use `pdflatex` + `bibtex` for bibliography support:
 
 ```bash
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
 bibtex main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
